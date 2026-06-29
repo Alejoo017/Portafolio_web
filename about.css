@@ -1,0 +1,196 @@
+/* About page */
+
+.about-profile {
+    background-color: var(--color-bg-elevated);
+}
+
+.about-profile__grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.about-profile__avatar {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(255, 75, 87, 0.15) 100%);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-profile__avatar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 75, 87, 0.2), transparent 60%);
+}
+
+.about-profile__initials {
+    position: relative;
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: -0.04em;
+    user-select: none;
+}
+
+.about-profile__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-profile__intro h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+}
+
+.about-profile__intro p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.about-content {
+    background-color: var(--color-bg);
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    padding: 2.5rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 75, 87, 0.25);
+    box-shadow: var(--shadow-hover);
+}
+
+.about-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 75, 87, 0.12);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.about-traits {
+    background-color: var(--color-bg-elevated);
+}
+
+.about-traits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.trait-tag {
+    padding: 1rem 1.25rem;
+    text-align: center;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.trait-tag:hover {
+    border-color: rgba(255, 75, 87, 0.4);
+    color: var(--color-accent);
+}
+
+.about-cta {
+    background: linear-gradient(160deg, var(--color-bg) 0%, var(--color-bg-elevated) 100%);
+    text-align: center;
+}
+
+.about-cta__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-cta h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.about-cta p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.about-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .about-profile__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-profile__avatar {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-card {
+        padding: 1.75rem;
+    }
+
+    .about-traits__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
