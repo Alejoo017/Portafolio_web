@@ -1,0 +1,219 @@
+/* Home — intro */
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    min-height: calc(100vh - var(--header-height));
+    padding: 3rem clamp(1.5rem, 5vw, 6rem);
+    background: linear-gradient(160deg, var(--color-bg-elevated) 0%, var(--color-bg) 60%);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.intro-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+}
+
+.title h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+}
+
+.intro-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-muted);
+    max-width: 32ch;
+}
+
+.title .btn {
+    margin-top: 0.5rem;
+}
+
+.intro__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Hero image */
+
+.intro__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro__image {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 3;
+    background-image: url(../images/sitio-web.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+}
+
+/* Skills */
+
+#work-section {
+    background-color: var(--color-bg-elevated);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 75, 87, 0.3);
+    box-shadow: var(--shadow-hover);
+}
+
+.skill-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.skill-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Projects */
+
+#projects-section {
+    background-color: var(--color-bg);
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.projects-header .hero-description {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2.5rem;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 75, 87, 0.25);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 1.75rem;
+}
+
+.project-card .btn {
+    align-self: flex-start;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .title {
+        align-items: center;
+    }
+
+    .intro-text {
+        max-width: none;
+    }
+
+    .intro__actions {
+        justify-content: center;
+    }
+
+    .intro__visual {
+        order: -1;
+    }
+
+    .intro__image {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card {
+        padding: 1.75rem;
+    }
+}
